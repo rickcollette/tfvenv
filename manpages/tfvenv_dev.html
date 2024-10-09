@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TFVENV User Documentation</title>
+</head>
+<body>
+    <h1>TFVENV User Documentation</h1>
+    <h2>Overview</h2>
+    <p>tfvenv is a command-line application designed to manage virtual environments for Terraform and Terragrunt. It simplifies the setup, maintenance, and activation of isolated environments, ensuring consistent tooling versions and configurations across different projects and teams.</p>
+
+    <h2>Commands</h2>
+    <h3>create</h3>
+    <p><strong>Description:</strong> Creates a new virtual environment with specified Terraform and Terragrunt versions.</p>
+    <pre><code>tfvenv create --env=&lt;env_directory&gt; --tf-version=&lt;version&gt; --tg-version=&lt;version&gt; --environments=&lt;env1,env2,...&gt;</code></pre>
+
+    <h3>delete</h3>
+    <p><strong>Description:</strong> Deletes an existing virtual environment.</p>
+    <pre><code>tfvenv delete --env=&lt;env_directory&gt;</code></pre>
+
+    <h3>list</h3>
+    <p><strong>Description:</strong> Lists all environments managed by tfvenv.</p>
+    <pre><code>tfvenv list --env=&lt;env_directory&gt;</code></pre>
+
+    <h2>Environment Variables</h2>
+    <p><strong>TFVENV_LOG_FILE:</strong> Specifies the file path where tfvenv will write its logs.</p>
+    <pre><code>export TFVENV_LOG_FILE=/path/to/tfvenv.log</code></pre>
+
+    <p><strong>TFVENV_VERBOSE:</strong> Enables verbose (debug-level) logging when set to true.</p>
+    <pre><code>export TFVENV_VERBOSE=true</code></pre>
+
+    <h2>Examples</h2>
+    <p>Create multiple environments:</p>
+    <pre><code>tfvenv create --env=.tfvenv --tf-version=1.3.5 --tg-version=0.35.12 --environments=dev,prod</code></pre>
+
+    <p>Activate an environment with custom variables:</p>
+    <pre><code>tfvenv activate --env=.tfvenv --env-type=staging --var=API_KEY=abcdef,DEBUG=true</code></pre>
+
+    <h2>Support</h2>
+    <p>For support, please open an issue on the GitHub repository or contact the maintainer at <a href="mailto:megalith@root.sh">megalith@root.sh</a>.</p>
+</body>
+</html>

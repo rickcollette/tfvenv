@@ -1,0 +1,53 @@
+
+.TH TFVENV 1 "October 2024" "TFVENV"
+.SH NAME
+tfvenv \- Manage virtual environments for Terraform and Terragrunt
+.SH SYNOPSIS
+.B tfvenv
+.RI [ command ] " [ options ]"
+.SH DESCRIPTION
+tfvenv is a command-line application designed to manage virtual environments for Terraform and Terragrunt. It simplifies the setup, maintenance, and activation of isolated environments, ensuring consistent tooling versions and configurations across different projects and teams.
+
+.SH COMMANDS
+.TP
+.B create
+Creates a new virtual environment with specified Terraform and Terragrunt versions.
+Example: 
+.B tfvenv create --env=.tfvenv --tf-version=1.3.5 --tg-version=0.35.12 --environments=dev,staging,prod
+.TP
+.B delete
+Deletes an existing virtual environment.
+Example: 
+.B tfvenv delete --env=.tfvenv
+.TP
+.B list
+Lists all environments managed by tfvenv.
+Example: 
+.B tfvenv list --env=.tfvenv
+
+.SH OPTIONS
+The following environment variables can control tfvenv's behavior:
+.TP
+.B TFVENV_LOG_FILE
+Specifies the file path where tfvenv will write its logs.
+Example:
+.B export TFVENV_LOG_FILE=/path/to/tfvenv.log
+.TP
+.B TFVENV_VERBOSE
+Enables verbose (debug-level) logging when set to true.
+Example:
+.B export TFVENV_VERBOSE=true
+
+.SH EXAMPLES
+.TP
+Create multiple environments:
+.B tfvenv create --env=.tfvenv --tf-version=1.3.5 --tg-version=0.35.12 --environments=dev,prod
+.TP
+Activate an environment with custom variables:
+.B tfvenv activate --env=.tfvenv --env-type=staging --var=API_KEY=abcdef,DEBUG=true
+
+.SH SUPPORT
+For support, please open an issue on the GitHub repository or contact the maintainer at megalith@root.sh.
+
+.SH "SEE ALSO"
+.B terraform(1), terragrunt(1)

@@ -1,0 +1,58 @@
+
+.TH TFVENV-DEV 1 "October 2024" "TFVENV Developer Documentation"
+.SH NAME
+tfvenv \- Developer documentation for managing virtual environments with Terraform and Terragrunt
+.SH SYNOPSIS
+.B tfvenv
+.RI [ command ] " [ options ]"
+.SH DESCRIPTION
+Developer documentation for contributing to tfvenv, an application to manage isolated Terraform and Terragrunt environments.
+
+.SH INSTALLATION
+Prerequisites:
+.TP
+Go: Download from https://golang.org/dl/
+.TP
+Git: Download from https://git-scm.com/downloads
+
+To build the application:
+.TP
+1. Clone the repository:
+.B git clone https://github.com/rickcollette/tfvenv.git
+.TP
+2. Navigate to the project directory:
+.B cd tfvenv
+.TP
+3. Build the application:
+.B go build -o tfvenv main.go
+.TP
+4. Move the binary to a directory in your PATH:
+.B mv tfvenv /usr/local/bin/
+.TP
+5. Verify the installation:
+.B tfvenv --help
+
+.SH CONTRIBUTING
+To contribute to tfvenv, follow these steps:
+.TP
+1. Fork the repository:
+.B git clone https://github.com/yourusername/tfvenv.git
+.TP
+2. Create a new branch:
+.B git checkout -b feature/your-feature-name
+.TP
+3. Make your changes.
+.TP
+4. Commit your changes:
+.B git commit -m "Add feature: your-feature-name"
+.TP
+5. Push to your fork:
+.B git push origin feature/your-feature-name
+.TP
+6. Open a pull request.
+
+.SH LICENSE
+TFVENV is released under the MIT License.
+
+.SH "SEE ALSO"
+.B terraform(1), terragrunt(1)
